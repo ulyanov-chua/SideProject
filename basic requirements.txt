@@ -4,7 +4,7 @@
 * Character creation (name, stats, stat allocation) /////(ilan stats pwede i allocate ) +-7
 * Character progression( level up, get items, get skills, etc..) 
 * Fighting system(skills, attack, defend, item, etc….) ///(lagi ba 1v1?) (also may varieties ba yun monster?) sa start 1v1 muna
-* Looting mechanic ///////(very kill may chance or sure loot?) chance to loot 1 or 2 + gold
+* Looting mechanic ///////(every kill may chance or sure loot?) chance to loot 1 or 2 + gold
 * Buying from shops///// ( sa town lang ba or may random merchant or lagi pwede?) 
 * Equipping items//// (pwede ba kung nag babattle gumamit ng items or change equip?)
 * Interacting with the city while out of combat ---- fixed shop lang muna
