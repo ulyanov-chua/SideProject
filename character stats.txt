@@ -1,0 +1,5 @@
+Strangth - damage modifier
+Vitality - Health modifier
+Agility - Hit/dodge modifier, defines who goes first
+Luck - Crit modifier (other stuff to be added)
+Intelligence - Experience gain modifier
