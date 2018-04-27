@@ -4,3 +4,10 @@ c:\users\karl\documents\visual studio 2015\Projects\gladiatorGame\gladiatorGame\
 c:\users\karl\documents\visual studio 2015\Projects\gladiatorGame\gladiatorGame\obj\Debug\gladiatorGame.csprojResolveAssemblyReference.cache
 c:\users\karl\documents\visual studio 2015\Projects\gladiatorGame\gladiatorGame\obj\Debug\gladiatorGame.exe
 c:\users\karl\documents\visual studio 2015\Projects\gladiatorGame\gladiatorGame\obj\Debug\gladiatorGame.pdb
+D:\RedBubble\SideProject\obj\Debug\gladiatorGame.csprojResolveAssemblyReference.cache
+D:\RedBubble\SideProject\obj\Debug\gladiatorGame.csproj.CoreCompileInputs.cache
+D:\RedBubble\SideProject\obj\Debug\gladiatorGame.exe
+D:\RedBubble\SideProject\obj\Debug\gladiatorGame.pdb
+D:\RedBubble\SideProject\bin\Debug\gladiatorGame.exe.config
+D:\RedBubble\SideProject\bin\Debug\gladiatorGame.exe
+D:\RedBubble\SideProject\bin\Debug\gladiatorGame.pdb
