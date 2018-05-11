@@ -12,15 +12,20 @@ namespace gladiatorGame
         {
             Console.WriteLine("enter character name :");
             Character player = new Character();
-            player.setName(Console.ReadLine());
+            player.name = Console.ReadLine();
             player.showCharInfo();
-
-            Item sword = new Item("SWORD OF MASS DESTRUCTION", 2, 0, 5);
-            sword.pickUp();
+           
 
             Character enemy = new Character("Dogshit", 1, 1, 1, 1, 1, 1);
             enemy.showCharInfo();
             Console.ReadKey();
+
+            Battle ass = new Battle(player,enemy);
+            ass.initiateBattle();
+            ass.fight();
+
+            Console.ReadKey();
+
         }
     }
 }

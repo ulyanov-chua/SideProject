@@ -1,0 +1,8 @@
+- create experience table for character progression  --done
+
+- add bonus stats on level up --done
+
+-sanitize player input -- done
+
+- allow player to change actions when selecting target
+
