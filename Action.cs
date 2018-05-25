@@ -9,13 +9,16 @@ namespace gladiatorGame
     class Action
     {
         public string name;
+        int ID;
         int basePower;
         int statModifier;
         int modPower;
         int targetStat;
+        int totalDmg;
 
-        public Action(string _name, int _basePower, int _statModifier, int _modPower, int _targetStat)
+        public Action(int _ID, string _name, int _basePower, int _statModifier, int _modPower, int _targetStat)
         {
+            ID = _ID;
             name = _name;
             basePower = _basePower;
             statModifier = _statModifier;
@@ -23,19 +26,26 @@ namespace gladiatorGame
             targetStat = _targetStat;
         }
 
-        public void affectTarget(Character target)
+        public void affectTarget(Character target, Character user)
         {
+            switch (statModifier)
+            {
+                case 2:
+                    totalDmg = basePower + (user.strength * modPower);
+                    break;
+            }
+
             switch (targetStat)
             {
                 case 1:
-                    target.health -= basePower + (statModifier * modPower);
+                    target.health -= totalDmg;
                     break;
                 default:
                     Console.WriteLine("something is wrong with this move");
                     break;
             }
 
-            Console.WriteLine("{0} is hit with {1} and is dealt {2} damage",target.name,name, basePower + (statModifier * modPower));
+            Console.WriteLine("{0} is hit with {1} and is dealt {2} damage",target.name,name, totalDmg);
 
         }
 

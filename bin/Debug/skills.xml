@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <Skill>
+    <ID>2</ID>
+    <Name>Enchanted Strike</Name>
+    <BasePow>30</BasePow>
+    <Modifier>2</Modifier>
+    <Modpow>10</Modpow>
+    <TargetStat>1</TargetStat> 
+  </Skill>
+</root>

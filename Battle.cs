@@ -28,15 +28,7 @@ namespace gladiatorGame
         }
 
         public void fight()
-        {
-            //if(participants.Any(c => c.team == 1 ) && participants.Any(c => c.team == 1)) // old thingy, ignore lang
-
-            //while (allied.Count > 0 && enemies.Count > 0)
-            //{
-            //    participants[0].basicAttack(participants[1]);
-            //    participants[1].showCharInfo();
-            //    Console.ReadKey();
-            //}           
+        {          
 
             while (participants.Any(c => c.team == 1) && participants.Any(c => c.team == 2)) // while an enemy is alive continue the fight
             {
@@ -48,7 +40,7 @@ namespace gladiatorGame
                     if (participants[i].team == 2) // if enemy, enemy will select the first player unit
                     {
                         target = participants[i].selectTarget(participants);
-                        participants[i].moveset[0].affectTarget(target);
+                        participants[i].moveset[0].affectTarget(target,participants[i]);
                         target.showCharInfo();
                     }
                     else
@@ -65,7 +57,7 @@ namespace gladiatorGame
                     casualties.Add(participants[1]);
                     participants.RemoveAt(1);
                 }
-
+                Console.WriteLine("fight is finished");
                 Console.ReadKey();
 
             }

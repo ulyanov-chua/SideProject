@@ -9,34 +9,20 @@ namespace gladiatorGame
     class Character 
     {
         public List<Action> moveset = new List<Action>();
-        public string name { get; set; }
+        public string name; 
         public int health;
-        int strength;
-        public int agility { get; set; }
-        int intelligence;
-        int luck;
-        int vitality;
-        int level;
-        public int team { get; set; }
-        int exp;  
-
-        public Character()
+        public int strength;
+        public int agility; 
+        public int intelligence;
+        public int luck;
+        public int vitality;
+        public int level;
+        public int team;
+        public int exp;  
+       
+        public Character(string _name, int lvl,int str, int agi, int intel, int lck, int vit, int _team) //basic character template
         {
-            level = 1;           
-            strength = 3;
-            agility = 3;
-            intelligence = 3;
-            luck = 3;
-            vitality = 3;
-            health = level * (vitality * 2 + 5) + 50;
-            team = 1;
-            exp = 0;
-            moveset.Add(new Action("Basic Attack",2,1,strength,1));
-        }
-
-        public Character(string nameParam, int lvl,int str, int agi, int intel, int lck, int vit) //use for creating enemies
-        {
-            name = nameParam;
+            name = _name;
             level = lvl;           
             strength = str;
             agility = agi;
@@ -44,8 +30,8 @@ namespace gladiatorGame
             luck = lck;
             vitality = vit;
             health = level * (vit * 2 + 5) + 50;
-            team = 2;
-            moveset.Add(new Action("Basic Attack", 2, 1, strength, 1));
+            team = _team;
+            moveset.Add(new Action(1,"Punch", 2, 1, strength, 1));
         }
 
         //---------------------------------------------------------------------------------------------
@@ -53,17 +39,10 @@ namespace gladiatorGame
         public void showCharInfo()      //Display the current stats of the character
         {
             Console.WriteLine("Name : {0}", name);
-            Console.WriteLine("level : {5}\nhealth : {6}\nstrength : {0}\nagility : {1}\nintelligence : {2}\nluck : {3}\nvitality : {4}\n", 
-                strength, agility, intelligence, luck, vitality, level, health);
+            Console.WriteLine("level : {5}\nhealth : {6}\nstrength : {0}\nagility : {1}\nintelligence : {2}\nluck : {3}\nvitality : {4}\nTeam : {7}\n", 
+                strength, agility, intelligence, luck, vitality, level, health, team);
         }
-
-        //public void basicAttack(Character target)
-        //{
-        //    target.health -= strength;
-        //    Console.WriteLine("\n{0} hit {1} for {2} damage", name, target.name, strength);
-        //    checkEnemy(target);
-        //}
-        
+       
         public bool isAlive()
         {
             if(health > 0)
@@ -76,7 +55,7 @@ namespace gladiatorGame
             }
         }
 
-        public Character selectTarget(List<Character> participants)
+        public Character selectTarget(List<Character> participants) // for cpu usage
         {
             return participants.First(player => player.team == 1);
                           
@@ -87,7 +66,7 @@ namespace gladiatorGame
             return 0;
         }
 
-        public void waitForCommand(List<Character> participants)
+        public void waitForCommand(List<Character> participants)    //use thie command to prompt skill and target from user
         {
             
             string moveInput;          
@@ -104,7 +83,7 @@ namespace gladiatorGame
             }         
 
 
-            //-------------------------------------------------------------------------------------------------
+            //--------------------VERIFY INPUT FOR SKILL SELECTION--------------------------------------------
             validInput = false;
             Console.WriteLine("Input Move Number :");
             while (!validInput)
@@ -138,7 +117,7 @@ namespace gladiatorGame
                 i++;
             }
 
-            //-------------------------------------------------------------------------------------------------
+            //--------------------VERIFY INPUT FOR TARGET SELECTION---------------------------------------------
             validInput = false;
             Console.WriteLine("Input Target Number :");
             while (!validInput)
@@ -165,7 +144,7 @@ namespace gladiatorGame
             }
             //-------------------------------------------------------------------------------------------------   
 
-            moveset[moveNum].affectTarget(participants[targetNum]);          
+            moveset[moveNum].affectTarget(participants[targetNum],this);          
             checkEnemy(participants[targetNum]);
 
         }

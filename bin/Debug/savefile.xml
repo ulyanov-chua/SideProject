@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <name>Poopman</name>
+  <level>2</level>
+  <experience>100</experience>
+  <team>1</team>
+  <stats>
+    <strength>4</strength>
+    <agility>3</agility>
+    <intelligence>3</intelligence>
+    <luck>3</luck>
+    <vitality>3</vitality>
+  </stats>
+  <Skills>
+    <Skill>1</Skill>
+  </Skills>
+</root>
